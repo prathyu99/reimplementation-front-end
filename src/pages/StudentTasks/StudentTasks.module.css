@@ -1,0 +1,97 @@
+.container {
+  font-family: Arial, sans-serif; /* Change to the font of your choice */
+  margin: 20px;
+}
+
+h1 {
+  color: #333; /* Dark text for the header */
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add space above the table */
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd; /* Light grey border */
+}
+
+th {
+  background-color: #f8f8f8; /* Light grey background */
+  color: #333; /* Dark text for headers */
+  text-align: left;
+  padding: 8px; /* Padding inside the header cells */
+}
+
+td {
+  padding: 8px; /* Padding inside cells */
+  text-align: left;
+}
+
+th:first-child,
+td:first-child {
+  border-left: none;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Zebra striping for rows */
+}
+
+/* Styling for the badge info icon and checkboxes */
+.badge-info-icon,
+.publishing-rights-checkbox {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Styling for the checkbox when it's checked */
+.publishing-rights-checkbox:checked {
+  accent-color: #009688; /* Teal-like color */
+}
+
+/* Additional styles */
+/* Align the table header and data to match the design */
+thead tr {
+  font-weight: bold;
+}
+
+/* This class is for the status indicator icons */
+.status-indicator {
+  color: #009688; /* Teal-like color for icons */
+  margin-left: 5px;
+}
+
+/* Disable the checkboxes visually */
+input[type="checkbox"][disabled] {
+  opacity: 0.6; /* Transparency to show it's disabled */
+  cursor: not-allowed;
+}
+
+/* Info icons in the table */
+.info-icon {
+  font-style: normal;
+  color: #017bff; /* Blue color for info icon */
+  cursor: help;
+}
+
+/* This can be used to style the surrounding sections like task counts and team member lists */
+.side-info {
+  color: #333;
+  padding: 10px 0;
+}
+
+.side-info .number {
+  font-weight: bold;
+  color: #d9534f; /* Red color for the number badge */
+}
+
+/* You may need to add responsiveness or additional styles as required */
