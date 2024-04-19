@@ -44,42 +44,53 @@ const StudentTasks: React.FC<Props> = () => {
     // ... add additional tasks as needed
   ]);
 
-  // Render the list of tasks within a container
-  return (
-      <div className={styles.container}>
-        <h1>Assignments</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>Assignment</th>
-              <th>Course</th>
-              <th>Topic</th>
-              <th>Current Stage</th>
-              <th>Review Grade</th>
-              <th>Badges</th>
-              <th>Stage Deadline</th>
-              <th>Publishing Rights</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tasks.map((task) => (
-              <tr key={task.id}>
-                <td><Link to={`/student_task_detail/${task.assignment}`}>{task.assignment}</Link></td>
-                <td>{task.course}</td>
-                <td>{task.topic}</td>
-                <td>{task.currentStage}</td>
-                <td>{task.reviewGrade}</td>
-                <td>{task.badges}</td>
-                <td>{task.stageDeadline}</td>
-                <td>
-                  <input type="checkbox" checked={task.publishingRights} disabled />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
+  // Function to toggle publishing rights
+  const togglePublishingRights = (id: number) => {
+    setTasks(prevTasks => prevTasks.map(task =>
+      task.id === id ? {...task, publishingRights: !task.publishingRights} : task
+    ));
   };
 
-  export default StudentTasks;
+  // Render the list of tasks within a container
+  return (
+    <div className={styles.container}>
+      <h1>Assignments</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Assignment</th>
+            <th>Course</th>
+            <th>Topic</th>
+            <th>Current Stage</th>
+            <th>Review Grade</th>
+            <th>Badges</th>
+            <th>Stage Deadline</th>
+            <th>Publishing Rights</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tasks.map((task) => (
+            <tr key={task.id}>
+              <td><Link to={`/student_task_detail/${task.assignment}`}>{task.assignment}</Link></td>
+              <td>{task.course}</td>
+              <td>{task.topic}</td>
+              <td>{task.currentStage}</td>
+              <td>{task.reviewGrade}</td>
+              <td>{task.badges}</td>
+              <td>{task.stageDeadline}</td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={task.publishingRights}
+                  onChange={() => togglePublishingRights(task.id)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default StudentTasks;
