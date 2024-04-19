@@ -1,5 +1,5 @@
 .container {
-  font-family: Arial, sans-serif; /* Change to the font of your choice */
+  font-family: Arial, sans-serif; /* Add "Helvetica Neue" if you have it available */
   margin: 20px;
 }
 
@@ -94,4 +94,26 @@ input[type="checkbox"][disabled] {
   color: #d9534f; /* Red color for the number badge */
 }
 
-/* You may need to add responsiveness or additional styles as required */
+/* New styles for the links based on the uploaded image */
+table td {
+  padding: 8px; /* Padding specified in your screenshot */
+}
+
+table td a {
+  color: #986633; /* The color specified in your screenshot */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* The font stack specified */
+  font-size: 14px; /* The font size specified */
+  padding: 0px 1px 2px; /* The padding specified */
+  display: block;
+  margin: 10px 0;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
+  /* No specific font-weight is given, so you might keep it normal or bold */
+}
+
+table td a:hover, table td a:focus {
+  color: #337ab7; /* Change color to #337ab7 on hover */
+  text-decoration: underline; /* Underline the link on hover */
+}
