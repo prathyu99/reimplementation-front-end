@@ -26,9 +26,8 @@ import Home from "pages/Home";
 import Questionnaire from "pages/EditQuestionnaire/Questionnaire";
 import Courses from "pages/Courses/Course";
 import CourseEditor from "pages/Courses/CourseEditor";
-import StudentTasks from "pages/StudentTasks/StudentTasks";
-import StudentTaskDetail from "pages/StudentTasks/StudentTaskDetail";
 import { loadCourseInstructorDataAndInstitutions } from "pages/Courses/CourseUtil";
+import StudentTasks from "./pages/StudentTasks/StudentTasks";
 import TA from "pages/TA/TA";
 import TAEditor from "pages/TA/TAEditor";
 import { loadTAs } from "pages/TA/TAUtil";
@@ -44,8 +43,10 @@ function App() {
         { path: "login", element: <Login /> },
         { path: "logout", element: <ProtectedRoute element={<Logout />} /> },
         { path: "edit-questionnaire", element: <ProtectedRoute element={<Questionnaire />} /> },
-        { path: "student_tasks", element: <ProtectedRoute element={<StudentTasks />} leastPrivilegeRole={ROLE.STUDENT} /> },
-        { path: "student_task_detail/:id", element: <ProtectedRoute element={<StudentTaskDetail />} leastPrivilegeRole={ROLE.STUDENT} /> },
+        {
+          path: "student_tasks",
+          element: <ProtectedRoute element={<StudentTasks />} leastPrivilegeRole={ROLE.STUDENT} />,
+        },
         {
           path: "assignments",
           element: <ProtectedRoute element={<Assignment />} leastPrivilegeRole={ROLE.TA} />,

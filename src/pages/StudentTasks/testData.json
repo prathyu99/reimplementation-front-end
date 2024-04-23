@@ -1,0 +1,111 @@
+
+{
+    "assignments": [
+        {
+            "name": "Assignment 1",
+            "course_name": "Course3",
+            "topic": "Ruby",
+            "current_stage": "in progress",
+            "review_grade": {
+                "comment": "3/5"
+            },
+            "has_badge": false,
+            "stage_deadline": "3/18",
+            "publishing_rights": true
+        },
+        {
+            "name": "Assignment 2",
+            "course_name": "Course3",
+            "topic": "Rails",
+            "current_stage": "in progress",
+            "review_grade": "N/A",
+            "has_badge": true,
+            "stage_deadline": "3/18",
+            "publishing_rights": true
+        },
+        {
+            "name": "Assignment 3",
+            "course_name": "Course3",
+            "topic": "Git",
+            "current_stage": "in progress",
+            "review_grade": "N/A",
+            "has_badge": true,
+            "stage_deadline": "3/18",
+            "publishing_rights": false
+        },
+        {
+            "name": "Assignment 1",
+            "course_name": "Course32",
+            "topic": "AI",
+            "current_stage": "in progress",
+            "review_grade": "N/A",
+            "has_badge": false,
+            "stage_deadline": "3/25",
+            "publishing_rights": true
+        },
+        {
+            "name": "Assignment 2",
+            "course_name": "Course4",
+            "topic": "Random Forest",
+            "current_stage": "finished",
+            "review_grade": "N/A",
+            "has_badge": false,
+            "stage_deadline": "3/28",
+            "publishing_rights": true
+        }
+    ],
+    "courses": [
+        {
+            "id": 1,
+            "name": "Course3",
+            "directory_path": "/path/to/course_files",
+            "info": null,
+            "private": false,
+            "created_at": "2024-04-21T23:46:38.633Z",
+            "updated_at": "2024-04-21T23:46:38.633Z",
+            "instructor_id": 2,
+            "institution_id": 1
+        },
+        {
+            "id": 4,
+            "name": "Course4",
+            "directory_path": "/path/to/course_files",
+            "info": null,
+            "private": false,
+            "created_at": "2024-04-21T23:46:38.633Z",
+            "updated_at": "2024-04-21T23:46:38.633Z",
+            "instructor_id": 2,
+            "institution_id": 1
+        }
+
+    ],
+
+    "duties": [
+        {
+            "name": "Program 1",
+            "dueDate": "2024-03-18"
+        },
+        {
+            "name": "Program 2",
+            "dueDate": "2024-03-18"
+        },
+        {
+            "name": "OSS project",
+            "dueDate": "2024-03-18"
+        },
+        {
+            "name": "OSS project 2",
+            "dueDate": "2024-03-25"
+        },
+        {
+            "name": "OSS project 3",
+            "dueDate": "2024-04-28"
+        }
+    ],
+    "revisions": [
+
+    ],
+    "studentsTeamedWith": {
+        "CSC/ECE 517, Fall 2023": ["teammate one", "teammate two", "teammate three", "teammate four","teammate five", "teammate six", "teammate seven"]
+    }
+}

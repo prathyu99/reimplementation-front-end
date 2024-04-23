@@ -117,3 +117,55 @@ table td a:hover, table td a:focus {
   color: #337ab7; /* Change color to #337ab7 on hover */
   text-decoration: underline; /* Underline the link on hover */
 }
+
+/* StudentTasks.module.css */
+.studentTasksLayout {
+  display: flex;
+  flex-direction: row; /* aligns children (StudentTasksBox and the tasks list) in a row */
+  gap: 20px; /* adds space between the children */
+}
+
+.studentTasksList {
+  flex-grow: 1; /* allows the tasks list to take up the remaining space */
+}
+
+
+/* StudentTasks.module.css */
+
+.pageLayout {
+  display: flex;
+  margin: 16px;
+}
+
+.sidebar {
+  width: 250px; /* Width of the sidebar */
+  margin-right: 20px; /* Spacing between sidebar and main content */
+}
+
+.mainContent {
+  flex-grow: 1;
+  overflow: hidden; /* In case the content is too wide */
+}
+
+.header {
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.tasksTable {
+  width: 100%; /* Full width of the main content area */
+  /* Add more styling for your table */
+}
+
+/* Add additional styling as needed */
+
+.assignments-page {
+  font-family: 'Arial', sans-serif;
+}
+
+.assignments-title {
+  color: #333;
+  text-align: left;
+  padding: 20px;
+  font-size: 24px;
+}
+
