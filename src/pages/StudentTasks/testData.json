@@ -1,57 +1,148 @@
 
 {
-    "assignments": [
+    "participantTasks": [
         {
-            "name": "Assignment 1",
-            "course_name": "Course3",
+            "id": 1,
+            "assignment": "Program 1",
+            "course": "CSC 517",
             "topic": "Ruby",
-            "current_stage": "in progress",
+            "current_stage": "In progress",
             "review_grade": {
-                "comment": "3/5"
+                "comment": "40/40"
             },
-            "has_badge": false,
-            "stage_deadline": "3/18",
-            "publishing_rights": true
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": true,
+            "participant_id": 1
         },
         {
-            "name": "Assignment 2",
-            "course_name": "Course3",
+            "id": 2,
+            "assignment": "Program 2",
+            "course": "CSC 517",
             "topic": "Rails",
-            "current_stage": "in progress",
+            "current_stage": "In progress",
             "review_grade": "N/A",
-            "has_badge": true,
-            "stage_deadline": "3/18",
-            "publishing_rights": true
+            "badges": true,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": false,
+            "participant_id": 2
         },
         {
-            "name": "Assignment 3",
-            "course_name": "Course3",
+            "id": 3,
+            "assignment": "Program 3",
+            "course": "CSC 517",
             "topic": "Git",
-            "current_stage": "in progress",
+            "current_stage": "In progress",
             "review_grade": "N/A",
-            "has_badge": true,
-            "stage_deadline": "3/18",
-            "publishing_rights": false
+            "badges": true,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": false,
+            "participant_id": 1
         },
         {
-            "name": "Assignment 1",
-            "course_name": "Course32",
-            "topic": "AI",
-            "current_stage": "in progress",
-            "review_grade": "N/A",
-            "has_badge": false,
-            "stage_deadline": "3/25",
-            "publishing_rights": true
+            "id": 4,
+            "assignment": "Program 4",
+            "course": "CSC 517",
+            "topic": "Reimplementation Backend",
+            "current_stage": "In progress",
+            "review_grade": "120/120",
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": true,
+            "participant_id": 1
         },
         {
-            "name": "Assignment 2",
-            "course_name": "Course4",
-            "topic": "Random Forest",
-            "current_stage": "finished",
+            "id": 5,
+            "assignment": "Program 5",
+            "course": "CSC 517",
+            "topic": "Reimplementation Frontend",
+            "current_stage": "Finished",
             "review_grade": "N/A",
-            "has_badge": false,
-            "stage_deadline": "3/28",
-            "publishing_rights": true
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": false,
+            "participant_id": 1
+        },
+        {
+            "id": 6,
+            "assignment": "OSS Program 1",
+            "course": "CSC 517",
+            "topic": "Reimplementation Frontend",
+            "current_stage": "Finished",
+            "review_grade": "N/A",
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": false,
+            "participant_id": 1
+        },
+        {
+            "id": 7,
+            "assignment": "OSS Program 2",
+            "course": "CSC 517",
+            "topic": "Reimplementation Frontend",
+            "current_stage": "Finished",
+            "review_grade": "N/A",
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": false,
+            "participant_id": 1
+        },
+        {
+            "id": 8,
+            "assignment": "Program 5",
+            "course": "CSC 517",
+            "topic": "Reimplementation Frontend",
+            "current_stage": "Finished",
+            "review_grade": "N/A",
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": true,
+            "participant_id": 1
+        },
+        {
+            "id": 9,
+            "assignment": "Program 5",
+            "course": "CSC 517",
+            "topic": "Reimplementation Frontend",
+            "current_stage": "Finished",
+            "review_grade": "N/A",
+            "badges": false,
+            "stage_deadline": "2024-02-26 12:00:00 -0500",
+            "publishing_rights": true,
+            "participant_id": 1
+        }
+    ],
+
+    "participants": [
+        {
+            "id": 1,
+            "assignment_id": 1,
+            "course_id": 1
+
+        },
+        {
+            "id": 1,
+            "assignment_id": 2,
+            "course_id": 1
+
+        },
+        {
+            "id": 2,
+            "assignment_id": 3,
+            "course_id": 1
+
+        },
+        {
+            "id": 1,
+            "assignment_id": 4,
+            "course_id": 1
+
+        },
+        {
+            "id": 1,
+            "assignment_id": 5,
+            "course_id": 1
+
         }
     ],
     "courses": [
@@ -106,6 +197,6 @@
 
     ],
     "studentsTeamedWith": {
-        "CSC/ECE 517, Fall 2023": ["teammate one", "teammate two", "teammate three", "teammate four","teammate five", "teammate six", "teammate seven"]
+        "CSC/ECE 517, Fall 2024": ["teammate one", "teammate two", "teammate three", "teammate four","teammate five", "teammate six", "teammate seven"]
     }
 }

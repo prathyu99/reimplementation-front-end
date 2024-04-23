@@ -169,3 +169,21 @@ table td a:hover, table td a:focus {
   font-size: 24px;
 }
 
+/* ... Existing styles ... */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.footerLink {
+  margin: 0 10px;
+  color: #CCAC00; /* Example link color */
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #000000;
+  text-decoration: underline;
+}
