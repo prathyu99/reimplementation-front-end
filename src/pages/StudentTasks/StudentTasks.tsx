@@ -16,18 +16,19 @@ type Task = {
   course: string;
   topic: string;
   currentStage: string;
-  reviewGrade: string;
-  badges: string;
+  reviewGrade: string | { comment: string };
+  badges: string | boolean; // Assuming badges can be either a string or a boolean
   stageDeadline: string;
   publishingRights: boolean;
 };
+
 
 type Props = {};
 
 
 const StudentTasks: React.FC = () => {
-  const { error, isLoading, data: assignmentResponse, sendRequest: fetchAssignments } = useAPI();
-  const { data: coursesResponse, sendRequest: fetchCourses } = useAPI();
+  const participantTasks = testData.participantTasks;
+
   const auth = useSelector((state: RootState) => state.authentication);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,48 +38,28 @@ const StudentTasks: React.FC = () => {
   const taskRevisions = testData.revisions;
   const studentsTeamedWith = testData.studentsTeamedWith;
 
-  // Fetch assignments and courses data on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        await Promise.all([
-          fetchAssignments({ url: '/assignments' }),
-          fetchCourses({ url: '/courses' })
-        ]);
-      } catch (error) {
-        console.error("Error fetching tasks data:", error);
-      }
-    };
-    fetchData();
-  }, [fetchAssignments, fetchCourses]);
 
-  // Merge assignments and courses data
   useEffect(() => {
-    if (assignmentResponse && coursesResponse) {
-      const mergedTasks = assignmentResponse.data.map((assignment: any) => {
-        const course = coursesResponse.data.find((c: any) => c.id === assignment.course_id);
+
+    if (participantTasks) {
+      const filteredParticipantTasks = participantTasks.filter(task => task.participant_id === 1);
+
+      const mergedTasks = filteredParticipantTasks.map(task => {
         return {
-          id: assignment.id,
-          assignment: assignment.name,
-          course: course ? course.name : 'Unknown',
-          topic: assignment.topic || '-',
-          currentStage: assignment.currentStage || 'Pending',
-          reviewGrade: assignment.reviewGrade || 'N/A',
-          badges: assignment.badges || '',
-          stageDeadline: assignment.stageDeadline || 'No deadline',
-          publishingRights: assignment.publishingRights || false
+          id: task.id,
+          assignment: task.assignment,
+          course: task.course,
+          topic: task.topic || '-',
+          currentStage: task.current_stage || 'Pending',
+          reviewGrade: task.review_grade || 'N/A',
+          badges: task.badges || '',
+          stageDeadline: task.stage_deadline || 'No deadline',
+          publishingRights: task.publishing_rights || false
         };
       });
       setTasks(mergedTasks);
     }
-  }, [assignmentResponse, coursesResponse]);
-
-  // Error handling for API requests
-  useEffect(() => {
-    if (error) {
-      dispatch({ type: 'SHOW_ALERT', payload: { message: error, variant: 'danger' }});
-    }
-  }, [error, dispatch]);
+}, [participantTasks]);
 
   // Function to toggle publishing rights
   const togglePublishingRights = useCallback((id: number) => {
@@ -102,10 +83,7 @@ const StudentTasks: React.FC = () => {
         />
     </aside>
     <div className={styles.mainContent}>
-  
-      {isLoading ? (
-        <p>Loading tasks...</p>
-      ) : (
+
         <table className={styles.tasksTable}>
         <thead>
             <tr>
@@ -126,7 +104,7 @@ const StudentTasks: React.FC = () => {
                 <td>{task.course}</td>
                 <td>{task.topic}</td>
                 <td>{task.currentStage}</td>
-                <td>{task.reviewGrade}</td>
+                <td>{typeof task.reviewGrade === 'string' ? task.reviewGrade : task.reviewGrade.comment}</td>
                 <td>{task.badges}</td>
                 <td>{task.stageDeadline}</td>
                 <td>
@@ -140,9 +118,14 @@ const StudentTasks: React.FC = () => {
             ))}
           </tbody>
         </table>
-      )}
     </div>
     </div>
+
+    {/* Footer Section Added */}
+          <div className={styles.footer}>
+            <Link to="https://wiki.expertiza.ncsu.edu/index.php/Expertiza_documentation" className={styles.footerLink}>Help</Link>
+            <Link to="https://research.csc.ncsu.edu/efg/expertiza/papers" className={styles.footerLink}>Papers on Expertiza</Link>
+          </div>
     </div>
   );
 };

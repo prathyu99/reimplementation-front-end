@@ -23,6 +23,10 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
   
   const StudentTasksBox: React.FC<StudentTasksBoxProps> = ({ duties, revisions, studentsTeamedWith }) => {
 
+    let totalStudents = 0;
+    for (const semester in studentsTeamedWith) {
+        totalStudents += studentsTeamedWith[semester].length;
+    }
 
   // Function to calculate the number of days left until the due date
   const calculateDaysLeft = (dueDate: string) => {
@@ -39,28 +43,28 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
   return (
     <div className={styles.taskbox}>
         <div className={styles.section}>
-          <span className={styles.badge}></span>
+          <span className={styles.badge}>0</span>
         <strong>Tasks not yet started</strong>
         </div>
 
     {/* Revisions section (remains empty since revisions array is empty) */}
       <div className={styles.section}>
-      <span className={styles.greyBadge}>{revisions.length}</span>
+      <span className={styles.greyBadge}>{tasksNotStarted.length}</span>
         <strong>Revisions</strong>
+        {tasksNotStarted.map((task, index) => {
+                const daysLeft = calculateDaysLeft(task.dueDate);
+                return (
+                  <div key={index}>
+                    &raquo; {task.name} ({daysLeft} day{daysLeft !== 1 ? 's' : ''} left)
+                  </div>
+                );
+              })}
       </div>
-
-      {tasksNotStarted.map((task, index) => {
-        const daysLeft = calculateDaysLeft(task.dueDate);
-        return (
-          <div key={index}>
-            &raquo; {task.name} ({daysLeft} day{daysLeft !== 1 ? 's' : ''} left)
-          </div>
-        );
-      })}
 
 
       {/* Students who have teamed with you section */}
       <div className={styles.section}>
+            <span className={styles.greyBadge}>{totalStudents}</span>
         <strong>Students who have teamed with you</strong>
       </div>
       {Object.entries(studentsTeamedWith).map(([semester, students], index) => (
