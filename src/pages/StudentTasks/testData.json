@@ -112,39 +112,6 @@
             "participant_id": 1
         }
     ],
-
-    "participants": [
-        {
-            "id": 1,
-            "assignment_id": 1,
-            "course_id": 1
-
-        },
-        {
-            "id": 1,
-            "assignment_id": 2,
-            "course_id": 1
-
-        },
-        {
-            "id": 2,
-            "assignment_id": 3,
-            "course_id": 1
-
-        },
-        {
-            "id": 1,
-            "assignment_id": 4,
-            "course_id": 1
-
-        },
-        {
-            "id": 1,
-            "assignment_id": 5,
-            "course_id": 1
-
-        }
-    ],
     "courses": [
         {
             "id": 1,
@@ -171,7 +138,10 @@
 
     ],
 
-    "duties": [
+    "dueTasks": [
+
+    ],
+    "revisions": [
         {
             "name": "Program 1",
             "dueDate": "2024-03-18"
@@ -193,10 +163,8 @@
             "dueDate": "2024-04-28"
         }
     ],
-    "revisions": [
-
-    ],
     "studentsTeamedWith": {
         "CSC/ECE 517, Fall 2024": ["teammate one", "teammate two", "teammate three", "teammate four","teammate five", "teammate six", "teammate seven"]
-    }
+    },
+    "current_user_id": 1
 }
