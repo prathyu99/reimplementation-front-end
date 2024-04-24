@@ -4,8 +4,15 @@
 }
 
 h1 {
-  color: #333; /* Dark text for the header */
   text-align: left;
+  padding-top: 5px;
+  padding-left: 15px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333333;
 }
 
 table {
@@ -97,6 +104,12 @@ input[type="checkbox"][disabled] {
 /* New styles for the links based on the uploaded image */
 table td {
   padding: 8px; /* Padding specified in your screenshot */
+  max-width: 100px; /* Adjust the width as needed for your design */
+  white-space: normal;
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
 }
 
 table td a {
@@ -139,7 +152,8 @@ table td a:hover, table td a:focus {
 
 .sidebar {
   width: 250px; /* Width of the sidebar */
-  margin-right: 20px; /* Spacing between sidebar and main content */
+  margin-right: 20px;
+   padding-top: 20px;/* Spacing between sidebar and main content */
 }
 
 .mainContent {
@@ -186,4 +200,8 @@ table td a:hover, table td a:focus {
 .footerLink:hover {
   color: #000000;
   text-decoration: underline;
+}
+.centerCheckbox {
+  text-align: center;
+  vertical-align: middle; /* This will vertically center it if your table rows are taller than the checkbox */
 }

@@ -73,9 +73,9 @@ const StudentTasks: React.FC = () => {
   return (
     <div className="assignments-page">
 
-    <h1 className="assignments-title">Student Task List</h1>
-    <div className={styles.pageLayout}>
+    <h1 className="assignments-title">Assignments</h1>
 
+    <div className={styles.pageLayout}>
 
     <aside className={styles.sidebar}>
         <StudentTasksBox  dueTasks={exampleDuties}
@@ -94,8 +94,14 @@ const StudentTasks: React.FC = () => {
               <th>Current Stage</th>
               <th>Review Grade</th>
               <th>Badges</th>
-              <th>Stage Deadline</th>
-              <th>Publishing Rights</th>
+              <th>
+                Stage Deadline
+                <img src="assets/icons/info.png" alt="Info" title="You can change 'Preferred Time Zone' in 'Profile' in the banner." />
+              </th>
+              <th>
+                Publishing Rights
+                <img src="assets/icons/info.png" alt="Info" title="Grant publishing rights" />
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -105,10 +111,14 @@ const StudentTasks: React.FC = () => {
                 <td>{task.course}</td>
                 <td>{task.topic}</td>
                 <td>{task.currentStage}</td>
-                <td>{typeof task.reviewGrade === 'string' ? task.reviewGrade : task.reviewGrade.comment}</td>
+                <td>
+                  {task.reviewGrade === "N/A" ? "NA" :
+                    <img src="assets/icons/info.png" alt="Review Grade" title={(task.reviewGrade as any).comment || ''} />
+                  }
+                </td>
                 <td>{task.badges}</td>
                 <td>{task.stageDeadline}</td>
-                <td>
+                <td className={styles.centerCheckbox}>
                   <input
                     type="checkbox"
                     checked={task.publishingRights}
