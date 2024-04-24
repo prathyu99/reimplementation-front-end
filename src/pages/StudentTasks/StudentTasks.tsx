@@ -72,9 +72,9 @@ const StudentTasks: React.FC = () => {
   return (
     <div className="assignments-page">
 
-    <h1 className="assignments-title">Student Task List</h1>
+    <h1 className="assignments-title">Assignments</h1>
+
     <div className={styles.pageLayout}>
- 
 
     <aside className={styles.sidebar}>
         <StudentTasksBox  duties={exampleDuties}
@@ -117,7 +117,7 @@ const StudentTasks: React.FC = () => {
                 </td>
                 <td>{task.badges}</td>
                 <td>{task.stageDeadline}</td>
-                <td>
+                <td className={styles.centerCheckbox}>
                   <input
                     type="checkbox"
                     checked={task.publishingRights}
