@@ -1,19 +1,21 @@
 import React from 'react';
-import styles from './StudentTasksBox.module.css'; // Make sure the path to your CSS module is correct
+import styles from './StudentTasksBox.module.css';
 
  type DueTask = {
 
   };
-  
+
   type Revision = {
         name: string;
         dueDate: string;
   };
-  
+
+  //Students teamed with data structure
   type StudentsTeamedWith = {
     [semester: string]: string[];
   };
-  
+
+  // interface for Student task box data
   interface StudentTasksBoxProps {
     dueTasks: DueTask[];
     revisions: Revision[];
@@ -39,6 +41,7 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
   // Find the revisions that have not done yet based on the due date
   const revisedTasks = revisions.filter(revisions => calculateDaysLeft(revisions.dueDate) > 0);
 
+// HTML for student task box
   return (
     <div className={styles.taskbox}>
         <div className={styles.section}>
@@ -81,4 +84,5 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
   );
 };
 
+// Exporting the component for use in other parts of the application
 export default StudentTasksBox;

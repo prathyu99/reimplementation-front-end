@@ -1,8 +1,10 @@
+/* Base container styling */
 .container {
-  font-family: Arial, sans-serif; /* Add "Helvetica Neue" if you have it available */
+  font-family: Arial, sans-serif;
   margin: 20px;
 }
 
+/* Header 1 styling */
 h1 {
   text-align: left;
   padding-top: 5px;
@@ -15,87 +17,94 @@ h1 {
   color: #333333;
 }
 
+/* Table base styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px; /* Add space above the table */
+  margin-top: 20px;
 }
 
+/* Table, th, and td shared border styling */
 table,
 th,
 td {
-  border: 1px solid #ddd; /* Light grey border */
+  border: 1px solid #ddd;
 }
 
+/* Table header styling */
 th {
-  background-color: #f8f8f8; /* Light grey background */
-  color: #333; /* Dark text for headers */
+  background-color: #f8f8f8;
+  color: #333;
   text-align: left;
-  padding: 8px; /* Padding inside the header cells */
+  padding: 8px;
 }
 
+/* Table data cell styling */
 td {
-  padding: 8px; /* Padding inside cells */
+  padding: 8px;
   text-align: left;
 }
 
+/* First child of th and td border styling */
 th:first-child,
 td:first-child {
   border-left: none;
 }
 
+/* Last child of th and td border styling */
 th:last-child,
 td:last-child {
   border-right: none;
 }
 
+/* Table row striping for even rows */
 tr:nth-child(even) {
-  background-color: #f2f2f2; /* Zebra striping for rows */
+  background-color: #f2f2f2;
 }
 
-/* Styling for the badge info icon and checkboxes */
+/* Badge info icon and publishing rights checkbox styling */
 .badge-info-icon,
 .publishing-rights-checkbox {
   cursor: pointer;
   margin-left: 5px;
 }
 
-/* Styling for the checkbox when it's checked */
+/* Checked state styling for publishing rights checkbox */
 .publishing-rights-checkbox:checked {
-  accent-color: #009688; /* Teal-like color */
+  accent-color: #009688;
 }
 
-/* Additional styles */
-/* Align the table header and data to match the design */
+/* Table header row font styling */
 thead tr {
   font-weight: bold;
 }
 
-/* This class is for the status indicator icons */
+/* Status indicator icons styling */
 .status-indicator {
-  color: #009688; /* Teal-like color for icons */
+  color: #009688;
   margin-left: 5px;
 }
 
-/* Disable the checkboxes visually */
+/* Disabled state styling for checkboxes */
 input[type="checkbox"][disabled] {
-  opacity: 0.6; /* Transparency to show it's disabled */
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Info icons in the table */
+/* Information icon styling in table */
 .info-icon {
   font-style: normal;
-  color: #017bff; /* Blue color for info icon */
+  color: #017bff;
   cursor: help;
 }
 
-/* This can be used to style the surrounding sections like task counts and team member lists */
+/* Side information section styling */
 .side-info {
   color: #333;
   padding: 10px 0;
 }
 
+/* Number styling in side information section */
 .side-info .number {
   font-weight: bold;
   color: #d9534f; /* Red color for the number badge */
@@ -112,70 +121,61 @@ table td {
   border-top: 1px solid #ddd;
 }
 
+/* Table data cell link styling */
 table td a {
-  color: #986633; /* The color specified in your screenshot */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* The font stack specified */
-  font-size: 14px; /* The font size specified */
-  padding: 0px 1px 2px; /* The padding specified */
+  color: #986633;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding: 0px 1px 2px;
   display: block;
   margin: 10px 0;
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
   transition: box-shadow 0.2s ease-in-out, background-color 0.3s;
-  /* No specific font-weight is given, so you might keep it normal or bold */
 }
 
+/* Table data cell link hover and focus styling */
 table td a:hover, table td a:focus {
-  color: #337ab7; /* Change color to #337ab7 on hover */
-  text-decoration: underline; /* Underline the link on hover */
+  color: #337ab7;
+  text-decoration: underline;
 }
 
-/* StudentTasks.module.css */
-.studentTasksLayout {
-  display: flex;
-  flex-direction: row; /* aligns children (StudentTasksBox and the tasks list) in a row */
-  gap: 20px; /* adds space between the children */
-}
-
-.studentTasksList {
-  flex-grow: 1; /* allows the tasks list to take up the remaining space */
-}
-
-
-/* StudentTasks.module.css */
-
+/* Page layout styling */
 .pageLayout {
   display: flex;
   margin: 16px;
 }
 
+/* Sidebar styling */
 .sidebar {
-  width: 250px; /* Width of the sidebar */
+  width: 250px;
   margin-right: 20px;
-   padding-top: 20px;/* Spacing between sidebar and main content */
+  padding-top: 20px;
 }
 
+/* Main content area styling */
 .mainContent {
   flex-grow: 1;
-  overflow: hidden; /* In case the content is too wide */
+  overflow: hidden;
 }
 
+/* Header below pageLayout styling */
 .header {
-  margin-bottom: 20px; /* Space below the header */
+  margin-bottom: 20px;
 }
 
+/* Tasks table styling */
 .tasksTable {
-  width: 100%; /* Full width of the main content area */
-  /* Add more styling for your table */
+  width: 100%;
 }
 
-/* Add additional styling as needed */
-
+/* Page assignments styling */
 .assignments-page {
   font-family: 'Arial', sans-serif;
 }
 
+/* Title in assignments page styling */
 .assignments-title {
   color: #333;
   text-align: left;
@@ -183,25 +183,28 @@ table td a:hover, table td a:focus {
   font-size: 24px;
 }
 
-/* ... Existing styles ... */
-
+/* Footer section styling */
 .footer {
   display: flex;
   justify-content: center;
   padding: 20px 0;
 }
 
+/* Footer link styling */
 .footerLink {
   margin: 0 10px;
   color: #986633;
   text-decoration: none;
 }
 
+/* Footer link hover styling */
 .footerLink:hover {
   color: #000000;
   text-decoration: underline;
 }
+
+/* Center checkbox in table data cell styling */
 .centerCheckbox {
   text-align: center;
-  vertical-align: middle; /* This will vertically center it if your table rows are taller than the checkbox */
+  vertical-align: middle;
 }
