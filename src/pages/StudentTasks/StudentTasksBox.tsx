@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './StudentTasksBox.module.css'; // Make sure the path to your CSS module is correct
 
-// Define the types for each prop
- type Duty = {
-    name: string;
-    dueDate: string;
+ type DueTask = {
+
   };
   
   type Revision = {
-    // Your Revision type properties
+        name: string;
+        dueDate: string;
   };
   
   type StudentsTeamedWith = {
@@ -16,12 +15,12 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
   };
   
   interface StudentTasksBoxProps {
-    duties: Duty[];
+    dueTasks: DueTask[];
     revisions: Revision[];
     studentsTeamedWith: StudentsTeamedWith;
   }
   
-  const StudentTasksBox: React.FC<StudentTasksBoxProps> = ({ duties, revisions, studentsTeamedWith }) => {
+  const StudentTasksBox: React.FC<StudentTasksBoxProps> = ({ dueTasks, revisions, studentsTeamedWith }) => {
 
     let totalStudents = 0;
     for (const semester in studentsTeamedWith) {
@@ -37,8 +36,8 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
     return daysDiff > 0 ? daysDiff : 0;
   };
 
-  // Find the duties that have not started yet based on the due date
-  const tasksNotStarted = duties.filter(duty => calculateDaysLeft(duty.dueDate) > 0);
+  // Find the revisions that have not done yet based on the due date
+  const revisedTasks = revisions.filter(revisions => calculateDaysLeft(revisions.dueDate) > 0);
 
   return (
     <div className={styles.taskbox}>
@@ -49,9 +48,9 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
 
     {/* Revisions section (remains empty since revisions array is empty) */}
       <div className={styles.section}>
-      <span className={styles.greyBadge}>{tasksNotStarted.length}</span>
+      <span className={styles.greyBadge}>{revisedTasks.length}</span>
         <strong>Revisions</strong>
-        {tasksNotStarted.map((task, index) => {
+        {revisedTasks.map((task, index) => {
                 const daysLeft = calculateDaysLeft(task.dueDate);
                 return (
                   <div key={index}>
@@ -64,7 +63,7 @@ import styles from './StudentTasksBox.module.css'; // Make sure the path to your
 
       {/* Students who have teamed with you section */}
       <div className={styles.section}>
-            <span className={styles.greyBadge}>{totalStudents}</span>
+        <span className={styles.badge}>{totalStudents}</span>
         <strong>Students who have teamed with you</strong>
       </div>
       {Object.entries(studentsTeamedWith).map(([semester, students], index) => (

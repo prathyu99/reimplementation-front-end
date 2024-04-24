@@ -23,18 +23,19 @@ type Task = {
 };
 
 
-type Props = {};
+type Props = {
+};
 
 
 const StudentTasks: React.FC = () => {
   const participantTasks = testData.participantTasks;
-
+  const currentUserId = testData.current_user_id;
   const auth = useSelector((state: RootState) => state.authentication);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [tasks, setTasks] = useState<Task[]>([]);
-  const exampleDuties = testData.duties;
+  const exampleDuties = testData.dueTasks;
   const taskRevisions = testData.revisions;
   const studentsTeamedWith = testData.studentsTeamedWith;
 
@@ -42,7 +43,7 @@ const StudentTasks: React.FC = () => {
   useEffect(() => {
 
     if (participantTasks) {
-      const filteredParticipantTasks = participantTasks.filter(task => task.participant_id === 1);
+      const filteredParticipantTasks = participantTasks.filter(task => task.participant_id === currentUserId);
 
       const mergedTasks = filteredParticipantTasks.map(task => {
         return {
@@ -77,9 +78,9 @@ const StudentTasks: React.FC = () => {
     <div className={styles.pageLayout}>
 
     <aside className={styles.sidebar}>
-        <StudentTasksBox  duties={exampleDuties}
+        <StudentTasksBox  dueTasks={exampleDuties}
             revisions={taskRevisions}
-            studentsTeamedWith={studentsTeamedWith} 
+            studentsTeamedWith={studentsTeamedWith}
         />
     </aside>
     <div className={styles.mainContent}>
