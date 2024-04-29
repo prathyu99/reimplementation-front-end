@@ -22,7 +22,7 @@
             "topic": "Rails",
             "current_stage": "In progress",
             "review_grade": "N/A",
-            "badges": true,
+            "badges": false,
             "stage_deadline": "2024-02-26 12:00:00 -0500",
             "publishing_rights": false,
             "participant_id": 2
@@ -34,7 +34,7 @@
             "topic": "Git",
             "current_stage": "In progress",
             "review_grade": "N/A",
-            "badges": true,
+            "badges": false,
             "stage_deadline": "2024-02-26 12:00:00 -0500",
             "publishing_rights": false,
             "participant_id": 1

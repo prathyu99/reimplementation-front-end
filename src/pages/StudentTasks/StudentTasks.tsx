@@ -67,6 +67,8 @@ const StudentTasks: React.FC = () => {
     ));
   }, []);
 
+  const showBadges = tasks.some(task => task.badges);
+
   // Component render method
   return (
     <div className="assignments-page">
@@ -88,14 +90,14 @@ const StudentTasks: React.FC = () => {
                 <th>Topic</th>
                 <th>Current Stage</th>
                 <th>Review Grade</th>
-                <th>Badges</th>
+                {showBadges && <th>Badges</th>}
                 <th>
                   Stage Deadline
                   <img src="assets/icons/info.png" alt="Info" title="You can change 'Preferred Time Zone' in 'Profile' in the banner." />
                 </th>
                 <th>
                   Publishing Rights
-                  <img src="assets/icons/info.png" alt="Info" title="Grant publishing rights" />
+                  <img src="assets/icons/info.png" alt="Info" title="Grant publishing rights to make my work available to others over the Web" />
                 </th>
               </tr>
             </thead>
@@ -111,7 +113,7 @@ const StudentTasks: React.FC = () => {
                       <img src="assets/icons/info.png" alt="Review Grade" title={(task.reviewGrade as any).comment || ''} />
                     }
                   </td>
-                  <td>{task.badges}</td>
+                  {showBadges && <td>{task.badges}</td>}
                   <td>{task.stageDeadline}</td>
                   <td className={styles.centerCheckbox}>
                     <input

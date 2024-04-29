@@ -45,13 +45,13 @@ import styles from './StudentTasksBox.module.css';
   return (
     <div className={styles.taskbox}>
         <div className={styles.section}>
-          <span className={styles.badge}>0</span>
+          <span className={styles.badge}>0</span> &nbsp;
         <strong>Tasks not yet started</strong>
         </div>
 
     {/* Revisions section (remains empty since revisions array is empty) */}
       <div className={styles.section}>
-      <span className={styles.greyBadge}>{revisedTasks.length}</span>
+      <span className={styles.greyBadge}>{revisedTasks.length}</span> &nbsp;
         <strong>Revisions</strong>
         {revisedTasks.map((task, index) => {
                 const daysLeft = calculateDaysLeft(task.dueDate);
@@ -66,7 +66,7 @@ import styles from './StudentTasksBox.module.css';
 
       {/* Students who have teamed with you section */}
       <div className={styles.section}>
-        <span className={styles.badge}>{totalStudents}</span>
+        <span className={styles.badge}>{totalStudents}</span> &nbsp;
         <strong>Students who have teamed with you</strong>
       </div>
       {Object.entries(studentsTeamedWith).map(([semester, students], index) => (
